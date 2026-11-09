@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Directory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header with Title and Theme Toggle -->
+    <header class="directory-header">
+      <div class="title-wrapper">
+        <span class="header-icon">🎓</span>
+        <h1>Student Directory</h1>
+      </div>
+      <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme">
+        <span id="themeIcon">🔅</span>
+        <span id="themeLabel">Light</span>
+      </button>
+    </header>
+
+    <!-- Student Input Form -->
+    <form id="studentForm" class="student-form">
+      <div class="form-group input-name-group">
+        <input
+          type="text"
+          id="studentName"
+          name="studentName"
+          placeholder="Student name"
+          required
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="form-group">
+        <select id="studentDepartment" name="studentDepartment" required>
+          <option value="Software">Software</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Civil">Civil</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select id="studentYear" name="studentYear" required>
+          <option value="1">Year 1</option>
+          <option value="2">Year 2</option>
+          <option value="3">Year 3</option>
+          <option value="4" selected>Year 4</option>
+        </select>
+      </div>
+
+      <button type="submit" id="addStudentBtn" class="btn-gradient">Add</button>
+    </form>
+
+    <!-- Department Filter Buttons -->
+    <nav class="filters-bar" aria-label="Department filters">
+      <button class="filter-btn active" data-department="All">All</button>
+      <button class="filter-btn" data-department="Software">Software</button>
+      <button class="filter-btn" data-department="Electrical">Electrical</button>
+      <button class="filter-btn" data-department="Mechanical">Mechanical</button>
+      <button class="filter-btn" data-department="Civil">Civil</button>
+    </nav>
+
+    <!-- Student Cards Container (Flexbox) -->
+    <section id="studentList" class="student-list" aria-live="polite">
+      <!-- Cards rendered dynamically via JS .map() -->
+    </section>
+
+    <!-- Directory Footer / Status Counter -->
+    <footer class="directory-footer">
+      <p id="studentCounter">Showing 0 of 0 students</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
